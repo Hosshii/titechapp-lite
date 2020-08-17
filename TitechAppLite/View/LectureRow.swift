@@ -11,7 +11,6 @@ import SwiftUI
 struct LectureRow: View {
     let lecture:Lecture
     var body: some View {
-        
         HStack {
             Rectangle()
                 .fill(Color("main"))
@@ -35,17 +34,14 @@ struct LectureRow: View {
                     .foregroundColor(Color("textSub"))
             }
             Spacer()
-            VStack(){
-                Text(self.lecture.location.joined(separator: ","))
-                    .lineLimit(2)
-                    .font(Font.system(size: 15))
-                    .foregroundColor(Color("main"))
-                    .frame(width: 44)
-            }.padding(.trailing,20)
-            
+            Text(self.lecture.location.joined(separator: ","))
+                .lineLimit(2)
+                .font(Font.system(size: 15))
+                .foregroundColor(Color("main"))
+                .frame(width: 44)
+                .padding(.trailing,16)
         }.frame(height: 100)
     }
-    
 }
 
 struct LectureRow_Previews: PreviewProvider {

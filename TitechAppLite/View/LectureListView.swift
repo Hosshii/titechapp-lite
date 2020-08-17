@@ -17,7 +17,6 @@ struct LectureListView: View {
 //            ForEach(viewModel.lectures){lecture in
                 LectureRow(lecture:lecture)
             }
-        
 //    }
     }
 }
