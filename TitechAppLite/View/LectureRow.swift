@@ -35,7 +35,6 @@ struct LectureRow: View {
                     .foregroundColor(Color("textSub"))
             }
             Spacer()
-            //            場所がいっぱいあるとはみ出るのでminにしたけどよくなさそう
             VStack(){
                 Text(self.lecture.location.joined(separator: ","))
                     .lineLimit(2)
@@ -43,9 +42,6 @@ struct LectureRow: View {
                     .foregroundColor(Color("main"))
                     .frame(width: 44)
             }.padding(.trailing,20)
-            
-            
-            
             
         }.frame(height: 100)
     }
