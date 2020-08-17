@@ -39,7 +39,7 @@ struct ContentView: View {
                 Spacer()
                 Text("w222")
                 
-            }.frame(height: 100)
+                }.frame(height: 100).listRowInsets(EdgeInsets(top: -20, leading: -20, bottom: -20, trailing: -20))
         }
     }
 }
