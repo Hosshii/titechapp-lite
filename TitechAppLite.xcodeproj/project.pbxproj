@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824024EA0C92001B6301 /* LectureRow.swift */; };
 		CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824324EA0F20001B6301 /* Lecture.swift */; };
-		CFE4BD3D24EA1F78003762FF /* LectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE4BD3C24EA1F78003762FF /* LectureList.swift */; };
+		CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */; };
+		CFE4BD3D24EA1F78003762FF /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE4BD3C24EA1F78003762FF /* LectureListView.swift */; };
 		CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF8AE1924E8F94900677260 /* AppDelegate.swift */; };
 		CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF8AE1B24E8F94900677260 /* SceneDelegate.swift */; };
-		CFF8AE1E24E8F94900677260 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF8AE1D24E8F94900677260 /* ContentView.swift */; };
 		CFF8AE2024E8F94A00677260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF8AE1F24E8F94A00677260 /* Assets.xcassets */; };
 		CFF8AE2324E8F94A00677260 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF8AE2224E8F94A00677260 /* Preview Assets.xcassets */; };
 		CFF8AE2624E8F94A00677260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF8AE2424E8F94A00677260 /* LaunchScreen.storyboard */; };
@@ -21,11 +21,11 @@
 /* Begin PBXFileReference section */
 		CF6E824024EA0C92001B6301 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
 		CF6E824324EA0F20001B6301 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
-		CFE4BD3C24EA1F78003762FF /* LectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureList.swift; sourceTree = "<group>"; };
+		CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListViewModel.swift; sourceTree = "<group>"; };
+		CFE4BD3C24EA1F78003762FF /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
 		CFF8AE1624E8F94900677260 /* TitechAppLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitechAppLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF8AE1924E8F94900677260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFF8AE1B24E8F94900677260 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFF8AE1D24E8F94900677260 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFF8AE1F24E8F94A00677260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFF8AE2224E8F94A00677260 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CFF8AE2524E8F94A00677260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				CF6E824024EA0C92001B6301 /* LectureRow.swift */,
-				CFE4BD3C24EA1F78003762FF /* LectureList.swift */,
+				CFE4BD3C24EA1F78003762FF /* LectureListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -58,6 +58,14 @@
 				CF6E824324EA0F20001B6301 /* Lecture.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CFDDB1E724EA2B2000EA27E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CFF8AE0D24E8F94900677260 = {
@@ -79,11 +87,11 @@
 		CFF8AE1824E8F94900677260 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				CFDDB1E724EA2B2000EA27E7 /* ViewModel */,
 				CF6E824224EA0F0A001B6301 /* Model */,
 				CF6E823F24EA0C73001B6301 /* View */,
 				CFF8AE1924E8F94900677260 /* AppDelegate.swift */,
 				CFF8AE1B24E8F94900677260 /* SceneDelegate.swift */,
-				CFF8AE1D24E8F94900677260 /* ContentView.swift */,
 				CFF8AE1F24E8F94A00677260 /* Assets.xcassets */,
 				CFF8AE2424E8F94A00677260 /* LaunchScreen.storyboard */,
 				CFF8AE2724E8F94A00677260 /* Info.plist */,
@@ -174,8 +182,8 @@
 				CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */,
 				CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */,
 				CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */,
-				CFF8AE1E24E8F94900677260 /* ContentView.swift in Sources */,
-				CFE4BD3D24EA1F78003762FF /* LectureList.swift in Sources */,
+				CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */,
+				CFE4BD3D24EA1F78003762FF /* LectureListView.swift in Sources */,
 				CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
