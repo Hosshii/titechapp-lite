@@ -11,18 +11,30 @@ import Foundation
 import Combine
 class LectureListViewModel: ObservableObject {
     @Published var lectures: [Lecture]=[
-        Lecture(id:"1", name: ["電気的aaaaaaaaaaaaaaaaaa", "hogehoge"],
-                description: ["RC回", "hogehoge", "hogehoge"],
-                location: ["W833","G114"]),
-        Lecture(id:"2", name: ["電気的aaaaaaaaaaaaaaaaaa", "hogehoge"],
-                description: ["RC回", "hogehoge", "hogehoge"],
-                location: ["W833","G114"]),
-        Lecture(id:"3", name: ["電気的aaaaaaaaaaaaaaaaaa", "hogehoge"],
-                description: ["RC回", "hogehoge", "hogehoge"],
-                location: ["W833","G114"]),
-        Lecture(id:"4", name: ["電気的aaaaaaaaaaaaaaaaaa", "hogehoge"],
-                description: ["RC回", "hogehoge", "hogehoge"],
-                location: ["W833","G114"])
+        Lecture(
+            id:"1",
+            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+            description: "RC回hogehogehogehoge",
+            location: ["W833","G114"]
+        ),
+        Lecture(
+            id:"2",
+            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+            description: "RC回hogehogehogehoge",
+            location: ["W833","G114"]
+        ),
+        Lecture(
+            id:"3",
+            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+            description: "RC回hogehogehogehoge",
+            location: ["W833","G114"]
+        ),
+        Lecture(
+            id:"4",
+            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+            description: "RC回hogehogehogehoge",
+            location: ["W833","G114"]
+        )
     ]
     
 }
