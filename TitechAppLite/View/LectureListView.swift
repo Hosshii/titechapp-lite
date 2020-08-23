@@ -13,7 +13,6 @@ struct LectureListView: View {
     var body: some View {
         NavigationView{
             List{
-                //        List(viewModel.lectures){lecture in
                 ForEach(0..<10) { _ in
                     Section(header: LectureHeader()){
                         ForEach(self.viewModel.lectures){lecture in
