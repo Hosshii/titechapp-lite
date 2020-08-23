@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57438424F2585000D6CF6C /* LectureHeader.swift */; };
 		CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824024EA0C92001B6301 /* LectureRow.swift */; };
 		CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824324EA0F20001B6301 /* Lecture.swift */; };
 		CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF57438424F2585000D6CF6C /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHeader.swift; sourceTree = "<group>"; };
 		CF6E824024EA0C92001B6301 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
 		CF6E824324EA0F20001B6301 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListViewModel.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				CF6E824024EA0C92001B6301 /* LectureRow.swift */,
 				CFE4BD3C24EA1F78003762FF /* LectureListView.swift */,
+				CF57438424F2585000D6CF6C /* LectureHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */,
+				CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */,
 				CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */,
 				CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */,
 				CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */,
