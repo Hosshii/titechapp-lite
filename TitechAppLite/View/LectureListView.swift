@@ -11,13 +11,18 @@ import SwiftUI
 struct LectureListView: View {
     @ObservedObject var viewModel = LectureListViewModel()
     var body: some View {
-//        ForEachでやると変になった
-//        List{
-        List(viewModel.lectures){lecture in
-//            ForEach(viewModel.lectures){lecture in
-                LectureRow(lecture:lecture)
+        NavigationView{
+            List{
+                ForEach(0..<10) { _ in
+                    Section(header: LectureHeader()){
+                        ForEach(self.viewModel.lectures){ lecture in
+                            LectureRow(lecture:lecture)
+                        }
+                    }.listRowInsets(EdgeInsets())
+                }
             }
-//    }
+            .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
+        }
     }
 }
 
