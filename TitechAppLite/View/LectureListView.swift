@@ -15,13 +15,13 @@ struct LectureListView: View {
             List{
                 ForEach(0..<10) { _ in
                     Section(header: LectureHeader()){
-                        ForEach(self.viewModel.lectures){lecture in
+                        ForEach(self.viewModel.lectures){ lecture in
                             LectureRow(lecture:lecture)
                         }
                     }.listRowInsets(EdgeInsets())
                 }
             }
-            .navigationBarTitle(Text("スケジュール"), displayMode: NavigationBarItem.TitleDisplayMode.inline)
+            .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
         }
     }
 }
