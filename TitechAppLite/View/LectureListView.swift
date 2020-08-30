@@ -16,7 +16,7 @@ struct LectureListView: View {
                 ForEach(0..<10) { _ in
                     ForEach(self.viewModel.multiDayLecture) { oneDayLecture in
                         Section(header: LectureHeader(date: oneDayLecture.date)){
-                            ForEach(oneDayLecture.lectures){ lecture in
+                            ForEach(oneDayLecture.lectures) { lecture in
                                 LectureRow(lecture: lecture)
                             }
                         }.listRowInsets(EdgeInsets())
