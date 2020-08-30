@@ -13,12 +13,14 @@ struct LectureListView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(0..<10) { _ in
-                    Section(header: LectureHeader()){
-                        ForEach(self.viewModel.lectures){ lecture in
-                            LectureRow(lecture:lecture)
-                        }
-                    }.listRowInsets(EdgeInsets())
+                ForEach(0..<10){ _ in
+                    ForEach(self.viewModel.MultiDayLecture) { oneDayLecture in
+                        Section(header: LectureHeader(date:oneDayLecture.date)){
+                            ForEach(oneDayLecture.lectures){ lecture in
+                                LectureRow(lecture:lecture)
+                            }
+                        }.listRowInsets(EdgeInsets())
+                    }
                 }
             }
             .navigationBarTitle(Text("スケジュール"), displayMode: .inline)

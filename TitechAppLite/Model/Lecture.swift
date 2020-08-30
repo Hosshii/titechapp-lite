@@ -14,3 +14,9 @@ struct Lecture:Identifiable{
     let description:String
     let location:[String]
 }
+
+struct OneDayLecture:Identifiable{
+    let id:String
+    let lectures:[Lecture]
+    let date:String
+}
