@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct Lecture:Identifiable{
-    let id:String
-    let name:String
-    let description:String
-    let location:[String]
+struct Lecture: Identifiable {
+    let id: String
+    let name: String
+    let description: String
+    let location: [String]
 }
 
-struct OneDayLecture:Identifiable{
-    let id:String
-    let lectures:[Lecture]
-    let date:String
+struct OneDayLecture: Identifiable {
+    let id: String
+    let lectures: [Lecture]
+    let date: String
 }

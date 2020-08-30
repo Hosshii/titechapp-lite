@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LectureHeader: View {
-    let date:String
+    let date: String
     var body: some View {
         HStack{
             Rectangle()
@@ -18,10 +18,9 @@ struct LectureHeader: View {
             Text(date)
                 .font(Font.system(size: 13))
                 .foregroundColor(Color("textSub"))
-                .padding(.leading ,15)
             Spacer()
         }
-        .frame(height:55)
+        .frame(height: 55)
         .background(Color("backgroundMain"))
     }
 }

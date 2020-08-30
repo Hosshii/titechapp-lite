@@ -15,25 +15,25 @@ class LectureListViewModel: ObservableObject {
             id: "1",
             lectures: [
                 Lecture(
-                    id:"1",
+                    id: "1",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"2",
+                    id: "2",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"3",
+                    id: "3",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"4",
+                    id: "4",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
@@ -45,25 +45,25 @@ class LectureListViewModel: ObservableObject {
             id: "2",
             lectures: [
                 Lecture(
-                    id:"1",
+                    id: "1",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"2",
+                    id: "2",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"3",
+                    id: "3",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
                 ),
                 Lecture(
-                    id:"4",
+                    id: "4",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
                     location: ["W833","G114"]
