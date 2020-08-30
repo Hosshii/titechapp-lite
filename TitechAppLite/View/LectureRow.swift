@@ -15,7 +15,7 @@ struct LectureRow: View {
             Rectangle()
                 .fill(Color("main"))
                 .frame(width: 5, height: 100, alignment: .leading)
-            VStack(alignment:.leading,spacing:21){
+            VStack(alignment: .leading, spacing: 21) {
                 Text("00:00")
                     .font(Font.system(size: 13))
                     .foregroundColor(Color("textMain"))
@@ -23,7 +23,7 @@ struct LectureRow: View {
                     .font(Font.system(size: 13))
                     .foregroundColor(Color("textSub"))
             }
-            VStack(alignment: .leading,spacing:21){
+            VStack(alignment: .leading, spacing: 21) {
                 Text(lecture.name)
                     .lineLimit(1)
                     .font(Font.system(size: 15))
@@ -51,7 +51,7 @@ struct LectureRow_Previews: PreviewProvider {
                 id:"1",
                 name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                 description: "RC回 hogehogehogehoge",
-                location: ["W833","G114"])
+                location: ["W833", "G114"])
         )
     }
 }

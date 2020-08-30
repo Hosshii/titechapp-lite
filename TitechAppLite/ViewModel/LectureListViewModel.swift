@@ -10,30 +10,66 @@ import Foundation
 
 import Combine
 class LectureListViewModel: ObservableObject {
-    @Published var lectures: [Lecture]=[
-        Lecture(
-            id:"1",
-            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-            description: "RC回hogehogehogehoge",
-            location: ["W833","G114"]
+    @Published var multiDayLecture: [OneDayLecture] = [
+        OneDayLecture(
+            id: "1",
+            lectures: [
+                Lecture(
+                    id: "1",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "2",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "3",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "4",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                )
+            ],
+            date: "7/13"
         ),
-        Lecture(
-            id:"2",
-            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-            description: "RC回hogehogehogehoge",
-            location: ["W833","G114"]
-        ),
-        Lecture(
-            id:"3",
-            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-            description: "RC回hogehogehogehoge",
-            location: ["W833","G114"]
-        ),
-        Lecture(
-            id:"4",
-            name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-            description: "RC回hogehogehogehoge",
-            location: ["W833","G114"]
+        OneDayLecture(
+            id: "2",
+            lectures: [
+                Lecture(
+                    id: "1",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "2",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "3",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                ),
+                Lecture(
+                    id: "4",
+                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
+                    description: "RC回hogehogehogehoge",
+                    location: ["W833", "G114"]
+                )
+            ],
+            date: "7/13"
         )
     ]
     
