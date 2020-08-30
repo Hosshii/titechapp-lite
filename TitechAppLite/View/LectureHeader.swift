@@ -27,6 +27,6 @@ struct LectureHeader: View {
 
 struct LectureHeader_Previews: PreviewProvider {
     static var previews: some View {
-        LectureHeader(date:"7/18")
+        LectureHeader(date: "7/18")
     }
 }

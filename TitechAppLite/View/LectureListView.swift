@@ -13,8 +13,8 @@ struct LectureListView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(0..<10){ _ in
-                    ForEach(self.viewModel.MultiDayLecture) { oneDayLecture in
+                ForEach(0..<10) { _ in
+                    ForEach(self.viewModel.multiDayLecture) { oneDayLecture in
                         Section(header: LectureHeader(date: oneDayLecture.date)){
                             ForEach(oneDayLecture.lectures){ lecture in
                                 LectureRow(lecture: lecture)

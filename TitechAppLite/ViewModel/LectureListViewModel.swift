@@ -10,7 +10,7 @@ import Foundation
 
 import Combine
 class LectureListViewModel: ObservableObject {
-    @Published var MultiDayLecture: [OneDayLecture] = [
+    @Published var multiDayLecture: [OneDayLecture] = [
         OneDayLecture(
             id: "1",
             lectures: [
@@ -18,25 +18,25 @@ class LectureListViewModel: ObservableObject {
                     id: "1",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "2",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "3",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "4",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 )
             ],
             date: "7/13"
@@ -48,25 +48,25 @@ class LectureListViewModel: ObservableObject {
                     id: "1",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "2",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "3",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 ),
                 Lecture(
                     id: "4",
                     name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                     description: "RC回hogehogehogehoge",
-                    location: ["W833","G114"]
+                    location: ["W833", "G114"]
                 )
             ],
             date: "7/13"
