@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF18D1872500C11F00A8002B /* Ics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1862500C11F00A8002B /* Ics.swift */; };
+		CF18D1892501094E00A8002B /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1882501094E00A8002B /* Mock.swift */; };
 		CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57438424F2585000D6CF6C /* LectureHeader.swift */; };
 		CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824024EA0C92001B6301 /* LectureRow.swift */; };
 		CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824324EA0F20001B6301 /* Lecture.swift */; };
+		CF941B2F24FB8E2A006BC550 /* Apiclient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF941B2E24FB8E2A006BC550 /* Apiclient.swift */; };
 		CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */; };
 		CFE4BD3D24EA1F78003762FF /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE4BD3C24EA1F78003762FF /* LectureListView.swift */; };
 		CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF8AE1924E8F94900677260 /* AppDelegate.swift */; };
@@ -20,9 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF18D1862500C11F00A8002B /* Ics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ics.swift; sourceTree = "<group>"; };
+		CF18D1882501094E00A8002B /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		CF57438424F2585000D6CF6C /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHeader.swift; sourceTree = "<group>"; };
 		CF6E824024EA0C92001B6301 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
 		CF6E824324EA0F20001B6301 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		CF941B2E24FB8E2A006BC550 /* Apiclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiclient.swift; sourceTree = "<group>"; };
 		CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListViewModel.swift; sourceTree = "<group>"; };
 		CFE4BD3C24EA1F78003762FF /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
 		CFF8AE1624E8F94900677260 /* TitechAppLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitechAppLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,14 +65,24 @@
 			isa = PBXGroup;
 			children = (
 				CF6E824324EA0F20001B6301 /* Lecture.swift */,
+				CF18D1862500C11F00A8002B /* Ics.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF941B2D24FB8E18006BC550 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				CF941B2E24FB8E2A006BC550 /* Apiclient.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		CFDDB1E724EA2B2000EA27E7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */,
+				CF18D1882501094E00A8002B /* Mock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -90,6 +106,7 @@
 		CFF8AE1824E8F94900677260 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				CF941B2D24FB8E18006BC550 /* ApiClient */,
 				CFDDB1E724EA2B2000EA27E7 /* ViewModel */,
 				CF6E824224EA0F0A001B6301 /* Model */,
 				CF6E823F24EA0C73001B6301 /* View */,
@@ -183,12 +200,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */,
+				CF18D1892501094E00A8002B /* Mock.swift in Sources */,
 				CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */,
 				CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */,
+				CF941B2F24FB8E2A006BC550 /* Apiclient.swift in Sources */,
 				CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */,
 				CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */,
 				CFE4BD3D24EA1F78003762FF /* LectureListView.swift in Sources */,
 				CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */,
+				CF18D1872500C11F00A8002B /* Ics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
