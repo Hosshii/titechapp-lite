@@ -47,8 +47,8 @@ class LectureListViewModel: ObservableObject {
         opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
         fmt.formatOptions = opt
         
-        fmt.timeZone = timezone   // 現地時間表記の場合
-        return fmt.date(from: dateString + "Z")!
+        fmt.timeZone = timezone
+        return fmt.date(from: dateString + "+0900")!
     }
     
     
@@ -109,6 +109,7 @@ class LectureListViewModel: ObservableObject {
                     ics.event.append(icsEvent)
                     icsEvent = ICSEvent.init()
                     flag = false
+                    
                 }
             }
             
@@ -122,9 +123,9 @@ class LectureListViewModel: ObservableObject {
     
     func ics2lecture(icsEvents: [ICSEvent]) -> [OneDayLecture] {
         let sortedICSEvents = icsEvents.sorted(by: { (a, b) -> Bool in
-            return a.dtstart > b.dtstart
+            return a.dtstart < b.dtstart
         })
-        var oneDayLectures: [OneDayLecture] = []
+        var multiDayLectures: [OneDayLecture] = []
         var roundedDate = Date.init()
         let cal = Calendar.current
         var index = -1
@@ -144,20 +145,21 @@ class LectureListViewModel: ObservableObject {
                 start: timeFormatter.string(from: icsEvent.dtstart),
                 end: timeFormatter.string(from: icsEvent.dtend)
             )
-            let oneDaylecture = OneDayLecture(
-                id: icsEvent.id,
-                lectures: [lecture],
-                date: formatter.string(from: roundedDate))
             
             if roundedDate != roundDate(icsEvent.dtstart, calendar: cal) {
                 roundedDate = roundDate(icsEvent.dtstart, calendar: cal)
-                oneDayLectures.append(oneDaylecture)
+                let oneDaylecture = OneDayLecture(
+                    id: icsEvent.id,
+                    lectures: [lecture],
+                    date: formatter.string(from: roundedDate)
+                )
+                multiDayLectures.append(oneDaylecture)
                 index = index + 1
             }else{
-                oneDayLectures[index].lectures.append(lecture)
+                multiDayLectures[index].lectures.append(lecture)
             }
         }
         
-        return oneDayLectures
+        return multiDayLectures
     }
 }
