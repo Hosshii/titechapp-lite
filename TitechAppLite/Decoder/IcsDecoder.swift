@@ -107,13 +107,13 @@ class IcsDecoder {
         return result
     }
 
-    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String)->Date{
+    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String)->Date?{
         let fmt = ISO8601DateFormatter()
         
         var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
         opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
         fmt.formatOptions = opt
-        return fmt.date(from: dateString + tzoffset)!
+        return fmt.date(from: dateString + tzoffset)
     }
 
 }

@@ -39,7 +39,7 @@ class IcsTranslator {
                             id: icsEvent.id,
                             name: icsEvent.summary,
                             description: icsEvent.description,
-                            location: icsEvent.location.components(separatedBy: " "),
+                            location: icsEvent.location.components(separatedBy: ","),
                             start: timeFormatter.string(from: icsEvent.dtstart),
                             end: timeFormatter.string(from: icsEvent.dtend)
                         )

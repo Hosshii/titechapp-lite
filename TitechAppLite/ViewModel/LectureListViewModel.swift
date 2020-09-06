@@ -17,15 +17,13 @@ class LectureListViewModel: ObservableObject {
     func appear(){
         cancellable = ApiClient()
             .fetch(URL(string:"https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!)
-            //                        .decode(type:String,decoder:JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
                 // TODO: エラーハンドリング
             },
-                  receiveValue: { landmarks in
+                  receiveValue: { ics in
  
-                    let data = String(data:landmarks,encoding: .utf8)!
-//                                                let data = mockdata
+                    let data = String(data: ics, encoding: .utf8)!
                     let icsEvents = IcsDecoder.icsDecoder(icsString: data)
                     let lectures = IcsTranslator.ics2lecture(icsEvents: icsEvents)
                     self.multiDayLecture = lectures
