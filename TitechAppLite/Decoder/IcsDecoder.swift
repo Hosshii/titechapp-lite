@@ -9,7 +9,7 @@
 import Foundation
 
 class IcsDecoder {
-    static func icsDecoder(icsString: String)->[ICSEvent]{
+    static func icsDecoder(icsString: String) -> [ICSEvent] {
         let TZOFFSET = "TZOFFSETTO"
         let BEGIN = "BEGIN:VEVENT"
         let DTSTAMP = "DTSTAMP"
@@ -32,7 +32,7 @@ class IcsDecoder {
         var tmpsummary: String?
         var tmpuid: String?
         
-        icsString.enumerateLines{line,stop in
+        icsString.enumerateLines{ line, stop in
             if line.hasPrefix(TZOFFSET) {
                 let l = line.replacingOccurrences(of: TZOFFSET + ":", with: "")
                 tzoffset = l
@@ -49,7 +49,8 @@ class IcsDecoder {
                     }
                     tmpdtstamp = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset)
                 }
-                if line.hasPrefix(DTSTART) {let arr = line.components(separatedBy: ":")
+                if line.hasPrefix(DTSTART) {
+                    let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
@@ -107,9 +108,8 @@ class IcsDecoder {
         return result
     }
 
-    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String)->Date?{
+    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String) -> Date? {
         let fmt = ISO8601DateFormatter()
-        
         var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
         opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
         fmt.formatOptions = opt

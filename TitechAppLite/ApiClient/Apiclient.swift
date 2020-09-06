@@ -10,8 +10,8 @@ import Foundation
 import Combine
 
 struct ApiClient {
-    let session: URLSession = URLSession(configuration:.default)
-    func fetch (_ url:URL)->AnyPublisher<Data,URLError>{
+    let session: URLSession = URLSession(configuration: .default)
+    func fetch (_ url: URL) -> AnyPublisher<Data, URLError> {
         session.dataTaskPublisher(for: url).map{$0.data}.eraseToAnyPublisher()
     }
 }

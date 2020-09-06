@@ -9,11 +9,11 @@
 import Foundation
 
 struct ICSEvent: Identifiable {
-    var dtstamp: Date
-    var dtstart: Date
-    var dtend: Date
-    var location: String
-    var description: String
-    var summary: String
-    var id: String
+    let dtstamp: Date
+    let dtstart: Date
+    let dtend: Date
+    let location: String
+    let description: String
+    let summary: String
+    let id: String
 }

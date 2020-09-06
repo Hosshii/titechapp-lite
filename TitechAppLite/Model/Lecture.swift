@@ -19,6 +19,6 @@ struct Lecture: Identifiable {
 
 struct OneDayLecture: Identifiable {
     let id: String
-    var lectures: [Lecture]
+    let lectures: [Lecture]
     let date: String
 }

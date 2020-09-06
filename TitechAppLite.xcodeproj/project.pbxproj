@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CF18D1872500C11F00A8002B /* Ics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1862500C11F00A8002B /* Ics.swift */; };
-		CF18D1892501094E00A8002B /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1882501094E00A8002B /* Mock.swift */; };
 		CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57438424F2585000D6CF6C /* LectureHeader.swift */; };
 		CF694F182504D37D00F4CE3C /* IcsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF694F172504D37D00F4CE3C /* IcsDecoder.swift */; };
 		CF694F1A2504D42C00F4CE3C /* IcsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF694F192504D42C00F4CE3C /* IcsTranslator.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		CF18D1862500C11F00A8002B /* Ics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ics.swift; sourceTree = "<group>"; };
-		CF18D1882501094E00A8002B /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		CF57438424F2585000D6CF6C /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHeader.swift; sourceTree = "<group>"; };
 		CF694F172504D37D00F4CE3C /* IcsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcsDecoder.swift; sourceTree = "<group>"; };
 		CF694F192504D42C00F4CE3C /* IcsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcsTranslator.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				CFDDB1EA24EA2BD500EA27E7 /* LectureListViewModel.swift */,
-				CF18D1882501094E00A8002B /* Mock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */,
-				CF18D1892501094E00A8002B /* Mock.swift in Sources */,
 				CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */,
 				CF694F182504D37D00F4CE3C /* IcsDecoder.swift in Sources */,
 				CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */,
