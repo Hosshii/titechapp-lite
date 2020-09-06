@@ -10,6 +10,8 @@
 		CF18D1872500C11F00A8002B /* Ics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1862500C11F00A8002B /* Ics.swift */; };
 		CF18D1892501094E00A8002B /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1882501094E00A8002B /* Mock.swift */; };
 		CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57438424F2585000D6CF6C /* LectureHeader.swift */; };
+		CF694F182504D37D00F4CE3C /* IcsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF694F172504D37D00F4CE3C /* IcsDecoder.swift */; };
+		CF694F1A2504D42C00F4CE3C /* IcsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF694F192504D42C00F4CE3C /* IcsTranslator.swift */; };
 		CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824024EA0C92001B6301 /* LectureRow.swift */; };
 		CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E824324EA0F20001B6301 /* Lecture.swift */; };
 		CF941B2F24FB8E2A006BC550 /* Apiclient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF941B2E24FB8E2A006BC550 /* Apiclient.swift */; };
@@ -26,6 +28,10 @@
 		CF18D1862500C11F00A8002B /* Ics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ics.swift; sourceTree = "<group>"; };
 		CF18D1882501094E00A8002B /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		CF57438424F2585000D6CF6C /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHeader.swift; sourceTree = "<group>"; };
+		CF694F172504D37D00F4CE3C /* IcsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcsDecoder.swift; sourceTree = "<group>"; };
+		CF694F192504D42C00F4CE3C /* IcsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcsTranslator.swift; sourceTree = "<group>"; };
+		CF694F1B2504DF8500F4CE3C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CF694F1C2504DF9F00F4CE3C /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ja-JP"; path = "ja-JP.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CF6E824024EA0C92001B6301 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
 		CF6E824324EA0F20001B6301 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		CF941B2E24FB8E2A006BC550 /* Apiclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiclient.swift; sourceTree = "<group>"; };
@@ -51,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF694F152504C17500F4CE3C /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				CF694F172504D37D00F4CE3C /* IcsDecoder.swift */,
+			);
+			path = Decoder;
+			sourceTree = "<group>";
+		};
+		CF694F162504C17C00F4CE3C /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				CF694F192504D42C00F4CE3C /* IcsTranslator.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
 		CF6E823F24EA0C73001B6301 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +128,8 @@
 		CFF8AE1824E8F94900677260 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				CF694F162504C17C00F4CE3C /* Translator */,
+				CF694F152504C17500F4CE3C /* Decoder */,
 				CF941B2D24FB8E18006BC550 /* ApiClient */,
 				CFDDB1E724EA2B2000EA27E7 /* ViewModel */,
 				CF6E824224EA0F0A001B6301 /* Model */,
@@ -170,6 +194,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
+				"ja-JP",
 			);
 			mainGroup = CFF8AE0D24E8F94900677260;
 			productRefGroup = CFF8AE1724E8F94900677260 /* Products */;
@@ -202,9 +228,11 @@
 				CFF8AE1A24E8F94900677260 /* AppDelegate.swift in Sources */,
 				CF18D1892501094E00A8002B /* Mock.swift in Sources */,
 				CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */,
+				CF694F182504D37D00F4CE3C /* IcsDecoder.swift in Sources */,
 				CFF8AE1C24E8F94900677260 /* SceneDelegate.swift in Sources */,
 				CF941B2F24FB8E2A006BC550 /* Apiclient.swift in Sources */,
 				CF6E824424EA0F20001B6301 /* Lecture.swift in Sources */,
+				CF694F1A2504D42C00F4CE3C /* IcsTranslator.swift in Sources */,
 				CFDDB1EB24EA2BD500EA27E7 /* LectureListViewModel.swift in Sources */,
 				CFE4BD3D24EA1F78003762FF /* LectureListView.swift in Sources */,
 				CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */,
@@ -219,6 +247,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CFF8AE2524E8F94A00677260 /* Base */,
+				CF694F1B2504DF8500F4CE3C /* ja */,
+				CF694F1C2504DF9F00F4CE3C /* ja-JP */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -230,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -290,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

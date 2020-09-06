@@ -16,22 +16,4 @@ struct ICSEvent: Identifiable {
     var description: String
     var summary: String
     var id: String
-    
-    init(){
-        self.dtstamp = Date.init()
-        self.dtstart = Date.init()
-        self.dtend = Date.init()
-        self.location = ""
-        self.description = ""
-        self.summary = ""
-        self.id = ""
-    }
 }
-
-struct ICS {
-    var timezone: TimeZone!
-    var event: [ICSEvent]
-
-}
-
- 
