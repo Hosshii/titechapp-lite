@@ -27,23 +27,34 @@ class IcsTranslator {
         
         let today = roundDate(Date(), calendar: cal)
         // 今日から何日表示するか
-        for i in 0..<120 {
+        var sivIndex = 0
+        L:for i in 0..<120 {
             guard let date = Calendar.current.date(byAdding: .day, value: i, to: today) else {
+                print("error")
                 continue
             }
             var tmpLectures: [Lecture] = []
-            for icsEvent in sortedICSEvents {
-                if roundDate(icsEvent.dtstart, calendar: cal) == date {
-                    tmpLectures.append(
-                        Lecture(
-                            id: icsEvent.id,
-                            name: icsEvent.summary,
-                            description: icsEvent.description,
-                            location: icsEvent.location.components(separatedBy: ","),
-                            start: timeFormatter.string(from: icsEvent.dtstart),
-                            end: timeFormatter.string(from: icsEvent.dtend)
-                        )
+            while roundDate(sortedICSEvents[sivIndex].dtstart, calendar: cal) < date {
+                sivIndex += 1
+                if sivIndex >= sortedICSEvents.count {
+                    break L
+                }
+            }
+            
+            while roundDate(sortedICSEvents[sivIndex].dtstart, calendar: cal) == date {
+                tmpLectures.append(
+                    Lecture(
+                        id: sortedICSEvents[sivIndex].id,
+                        name: sortedICSEvents[sivIndex].summary,
+                        description: sortedICSEvents[sivIndex].description,
+                        location: sortedICSEvents[sivIndex].location.components(separatedBy: ","),
+                        start: timeFormatter.string(from: sortedICSEvents[sivIndex].dtstart),
+                        end: timeFormatter.string(from: sortedICSEvents[sivIndex].dtend)
                     )
+                )
+                sivIndex += 1
+                if sivIndex >= sortedICSEvents.count {
+                    break L
                 }
             }
             
