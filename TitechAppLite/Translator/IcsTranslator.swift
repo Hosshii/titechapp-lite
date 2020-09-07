@@ -14,23 +14,23 @@ class IcsTranslator {
     }
     
     static func ics2lecture(icsEvents: [ICSEvent]) -> [OneDayLecture] {
-        let sortedICSEvents = icsEvents.sorted(by: { (a, b) -> Bool in
-            return a.dtstart < b.dtstart
-        })
+        let sortedICSEvents = icsEvents.sorted{ $0.dtstart < $1.dtstart }
         var multiDayLectures: [OneDayLecture] = []
         let cal = Calendar.current
         
         let formatter = DateFormatter()
         formatter.locale = Locale.current
-        formatter.setLocalizedDateFormatFromTemplate("MMMd")
+        formatter.setLocalizedDateFormatFromTemplate("MMMdEEEE")
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .none
         timeFormatter.timeStyle = .short
         
         let today = roundDate(Date(), calendar: cal)
         // 今日から何日表示するか
-        for i in 0..<90 {
-            let date = Calendar.current.date(byAdding: .day, value: i, to: today)!
+        for i in 0..<120 {
+            guard let date = Calendar.current.date(byAdding: .day, value: i, to: today) else {
+                continue
+            }
             var tmpLectures: [Lecture] = []
             for icsEvent in sortedICSEvents {
                 if roundDate(icsEvent.dtstart, calendar: cal) == date {
@@ -48,7 +48,7 @@ class IcsTranslator {
             }
             
             let oneDaylecture = OneDayLecture(
-                id: String(i),
+                id: date,
                 lectures: tmpLectures,
                 date: formatter.string(from: date)
             )

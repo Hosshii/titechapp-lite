@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ICSEvent: Identifiable {
+struct ICSEvent {
     let dtstamp: Date
     let dtstart: Date
     let dtend: Date

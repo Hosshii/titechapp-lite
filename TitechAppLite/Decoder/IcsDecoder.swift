@@ -31,6 +31,7 @@ class IcsDecoder {
         var tmpdescription: String?
         var tmpsummary: String?
         var tmpuid: String?
+        let fmt = ISO8601DateFormatter()
         
         icsString.enumerateLines{ line, stop in
             if line.hasPrefix(TZOFFSET) {
@@ -47,21 +48,21 @@ class IcsDecoder {
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtstamp = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset)
+                    tmpdtstamp = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
                 }
                 if line.hasPrefix(DTSTART) {
                     let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtstart = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset)
+                    tmpdtstart = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
                 }
                 if line.hasPrefix(DTEND) {
                     let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtend = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset)
+                    tmpdtend = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
                 }
                 if line.hasPrefix(LOCATION) {
                     let l = line.replacingOccurrences(of: LOCATION + ":", with: "")
@@ -108,8 +109,7 @@ class IcsDecoder {
         return result
     }
 
-    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String) -> Date? {
-        let fmt = ISO8601DateFormatter()
+    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String, fmt: ISO8601DateFormatter) -> Date? {
         var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
         opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
         fmt.formatOptions = opt

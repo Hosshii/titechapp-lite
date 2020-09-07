@@ -23,8 +23,8 @@ class LectureListViewModel: ObservableObject {
             },
                   receiveValue: { ics in
  
-                    let data = String(data: ics, encoding: .utf8)!
-                    let icsEvents = IcsDecoder.icsDecoder(icsString: data)
+                    let icsString = String(data: ics, encoding: .utf8) ?? ""
+                    let icsEvents = IcsDecoder.icsDecoder(icsString: icsString)
                     let lectures = IcsTranslator.ics2lecture(icsEvents: icsEvents)
                     self.multiDayLecture = lectures
             }
