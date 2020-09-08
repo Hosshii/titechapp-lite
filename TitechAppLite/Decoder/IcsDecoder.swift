@@ -9,6 +9,8 @@
 import Foundation
 
 class IcsDecoder {
+    static var iso8601fmt = makeISO8601formatter()
+    
     static func icsDecoder(icsString: String) -> [ICSEvent] {
         let TZOFFSET = "TZOFFSETTO"
         let BEGIN = "BEGIN:VEVENT"
@@ -20,7 +22,7 @@ class IcsDecoder {
         let SUMMARY = "SUMMARY"
         let UID = "UID"
         let END = "END:VEVENT"
-        var flag = false
+        var beginFlag = false
         var tzoffset = "0000"
         var result: [ICSEvent] = []
         
@@ -31,7 +33,6 @@ class IcsDecoder {
         var tmpdescription: String?
         var tmpsummary: String?
         var tmpuid: String?
-        let fmt = ISO8601DateFormatter()
         
         icsString.enumerateLines{ line, stop in
             if line.hasPrefix(TZOFFSET) {
@@ -39,48 +40,41 @@ class IcsDecoder {
                 tzoffset = l
             }
             if line.hasPrefix(BEGIN) {
-                flag = true
+                beginFlag = true
             }
             
-            if flag {
+            if beginFlag {
                 if line.hasPrefix(DTSTAMP) {
                     let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtstamp = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
-                }
-                if line.hasPrefix(DTSTART) {
+                    tmpdtstamp = iso8601fmt.date(from: arr[1] + tzoffset)
+                } else if line.hasPrefix(DTSTART) {
                     let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtstart = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
-                }
-                if line.hasPrefix(DTEND) {
+                    tmpdtstart = iso8601fmt.date(from: arr[1] + tzoffset)
+                } else if line.hasPrefix(DTEND) {
                     let arr = line.components(separatedBy: ":")
                     if arr.count < 2 {
                         return
                     }
-                    tmpdtend = ISO8601StringtoDateTime(dateString: arr[1], tzoffset: tzoffset, fmt: fmt)
-                }
-                if line.hasPrefix(LOCATION) {
+                    tmpdtend = iso8601fmt.date(from: arr[1] + tzoffset)
+                } else if line.hasPrefix(LOCATION) {
                     let l = line.replacingOccurrences(of: LOCATION + ":", with: "")
                     tmplocation = l
-                }
-                if line.hasPrefix(DESCRIPTION) {
+                }else if line.hasPrefix(DESCRIPTION) {
                     let l = line.replacingOccurrences(of: DESCRIPTION + ":", with: "")
                     tmpdescription = l
-                }
-                if line.hasPrefix(SUMMARY) {
+                } else if line.hasPrefix(SUMMARY) {
                     let l = line.replacingOccurrences(of: SUMMARY + ":", with: "")
                     tmpsummary = l
-                }
-                if line.hasPrefix(UID) {
+                }else if line.hasPrefix(UID) {
                     let l = line.replacingOccurrences(of: UID + ":", with: "")
                     tmpuid = l
-                }
-                if line.hasPrefix(END) {
+                }else if line.hasPrefix(END) {
                     guard
                         let dtstamp = tmpdtstamp,
                         let dtstart = tmpdtstart,
@@ -100,7 +94,7 @@ class IcsDecoder {
                             id: uid
                         )
                     )
-                    flag = false
+                    beginFlag = false
                     
                 }
             }
@@ -109,11 +103,12 @@ class IcsDecoder {
         return result
     }
 
-    static func ISO8601StringtoDateTime(dateString: String, tzoffset: String, fmt: ISO8601DateFormatter) -> Date? {
+    static func makeISO8601formatter() -> ISO8601DateFormatter {
+        let fmt = ISO8601DateFormatter()
         var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
         opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
         fmt.formatOptions = opt
-        return fmt.date(from: dateString + tzoffset)
+        return fmt
     }
 
 }
