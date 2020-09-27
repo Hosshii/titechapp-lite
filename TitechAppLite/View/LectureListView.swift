@@ -13,17 +13,18 @@ struct LectureListView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(0..<10) { _ in
-                    ForEach(self.viewModel.multiDayLecture) { oneDayLecture in
-                        Section(header: LectureHeader(date: oneDayLecture.date)){
-                            ForEach(oneDayLecture.lectures) { lecture in
-                                LectureRow(lecture: lecture)
-                            }
-                        }.listRowInsets(EdgeInsets())
-                    }
-                }
+                ForEach(self.viewModel.multiDayLecture) { oneDayLecture in
+                    Section(header: LectureHeader(date: oneDayLecture.date)){
+                        ForEach(oneDayLecture.lectures) { lecture in
+                            LectureRow(lecture: lecture)
+                        }
+                    }.listRowInsets(EdgeInsets())
+                }                
             }
             .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
+        }
+        .onAppear{
+            self.viewModel.appear()
         }
     }
 }

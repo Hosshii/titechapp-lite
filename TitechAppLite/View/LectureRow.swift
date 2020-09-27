@@ -16,10 +16,10 @@ struct LectureRow: View {
                 .fill(Color("main"))
                 .frame(width: 5, height: 100, alignment: .leading)
             VStack(alignment: .leading, spacing: 21) {
-                Text("00:00")
+                Text(lecture.start)
                     .font(Font.system(size: 13))
                     .foregroundColor(Color("textMain"))
-                Text("00:00")
+                Text(lecture.end)
                     .font(Font.system(size: 13))
                     .foregroundColor(Color("textSub"))
             }
@@ -46,12 +46,16 @@ struct LectureRow: View {
 
 struct LectureRow_Previews: PreviewProvider {
     static var previews: some View {
-        LectureRow(lecture:
-            Lecture(
+        LectureRow(
+            lecture: Lecture(
                 id:"1",
                 name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                 description: "RC回 hogehogehogehoge",
-                location: ["W833", "G114"])
+                location: ["W833", "G114"],
+                start: "8:50",
+                end: "10:30"
+                
+            )
         )
     }
 }

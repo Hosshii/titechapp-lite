@@ -10,67 +10,24 @@ import Foundation
 
 import Combine
 class LectureListViewModel: ObservableObject {
-    @Published var multiDayLecture: [OneDayLecture] = [
-        OneDayLecture(
-            id: "1",
-            lectures: [
-                Lecture(
-                    id: "1",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "2",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "3",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "4",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                )
-            ],
-            date: "7/13"
-        ),
-        OneDayLecture(
-            id: "2",
-            lectures: [
-                Lecture(
-                    id: "1",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "2",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "3",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                ),
-                Lecture(
-                    id: "4",
-                    name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
-                    description: "RC回hogehogehogehoge",
-                    location: ["W833", "G114"]
-                )
-            ],
-            date: "7/13"
-        )
-    ]
+    @Published var multiDayLecture: [OneDayLecture] = []
     
+    private var cancellable: AnyCancellable!
+    
+    func appear(){
+        cancellable = ApiClient()
+            .fetch(URL(string:"https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in
+                // TODO: エラーハンドリング
+            },
+                  receiveValue: { ics in
+ 
+                    let icsString = String(data: ics, encoding: .utf8) ?? ""
+                    let icsEvents = IcsDecoder.icsDecoder(icsString: icsString)
+                    let lectures = IcsTranslator.ics2lecture(icsEvents: icsEvents)
+                    self.multiDayLecture = lectures
+            }
+        )
+    }
 }

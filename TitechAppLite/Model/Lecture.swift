@@ -13,10 +13,12 @@ struct Lecture: Identifiable {
     let name: String
     let description: String
     let location: [String]
+    let start: String
+    let end: String
 }
 
 struct OneDayLecture: Identifiable {
-    let id: String
+    let id: Date
     let lectures: [Lecture]
     let date: String
 }
