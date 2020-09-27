@@ -9,19 +9,26 @@
 import Foundation
 
 class IcsDecoder {
-    static var iso8601fmt = makeISO8601formatter()
+    static let iso8601fmt: ISO8601DateFormatter = {
+        let fmt = ISO8601DateFormatter()
+        var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
+        opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
+        fmt.formatOptions = opt
+        return fmt
+    }()
     
+    static let TZOFFSET = "TZOFFSETTO"
+    static let BEGIN = "BEGIN:VEVENT"
+    static let DTSTAMP = "DTSTAMP"
+    static let DTEND = "DTEND"
+    static let DTSTART = "DTSTART"
+    static let LOCATION = "LOCATION"
+    static let DESCRIPTION = "DESCRIPTION"
+    static let SUMMARY = "SUMMARY"
+    static let UID = "UID"
+    static let END = "END:VEVENT"
+
     static func icsDecoder(icsString: String) -> [ICSEvent] {
-        let TZOFFSET = "TZOFFSETTO"
-        let BEGIN = "BEGIN:VEVENT"
-        let DTSTAMP = "DTSTAMP"
-        let DTEND = "DTEND"
-        let DTSTART = "DTSTART"
-        let LOCATION = "LOCATION"
-        let DESCRIPTION = "DESCRIPTION"
-        let SUMMARY = "SUMMARY"
-        let UID = "UID"
-        let END = "END:VEVENT"
         var beginFlag = false
         var tzoffset = "0000"
         var result: [ICSEvent] = []
@@ -102,13 +109,4 @@ class IcsDecoder {
         }
         return result
     }
-
-    static func makeISO8601formatter() -> ISO8601DateFormatter {
-        let fmt = ISO8601DateFormatter()
-        var opt: ISO8601DateFormatter.Options = [.withFullDate, .withFullTime]
-        opt.remove([.withDashSeparatorInDate, .withColonSeparatorInTime, .withColonSeparatorInTimeZone])
-        fmt.formatOptions = opt
-        return fmt
-    }
-
 }
