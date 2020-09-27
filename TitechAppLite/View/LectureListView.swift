@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LectureListView: View {
     @ObservedObject var viewModel = LectureListViewModel()
+    @State var isPresented: Bool = false
+    
     var body: some View {
         NavigationView{
             List{
@@ -22,12 +24,38 @@ struct LectureListView: View {
                 }                
             }
             .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
+            .navigationBarItems(trailing: MenuButton(isPresented: $isPresented))
+            
+            
         }
         .onAppear{
             self.viewModel.appear()
         }
+        .sheet(isPresented: $isPresented){
+            SheetView()
+        }
     }
 }
+
+struct SheetView: View {
+    @State var ocwURL: String = ""
+    var body: some View {
+        NavigationView {
+            Form {
+                TextField("URL",text: $ocwURL)
+                Button(action: {
+                    print("Button Tapped")
+                }){
+                    Text("保存")
+                }
+//                .foregroundColor(Color("main"))
+                .disabled(!ValidURL.verifyUrl(urlString: ocwURL))
+            }
+            
+        }
+    }
+}
+
 
 struct LectureList_Previews: PreviewProvider {
     static var previews: some View {
