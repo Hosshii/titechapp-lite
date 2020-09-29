@@ -24,9 +24,11 @@ struct LectureListView: View {
                 }                
             }
             .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
-            .navigationBarItems(trailing: MenuButton(isPresented: $isPresented))
-            
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) { // <3>
+                    MenuButton(isPresented: $isPresented)
+                }
+            }
         }
         .onAppear{
             self.viewModel.appear()
