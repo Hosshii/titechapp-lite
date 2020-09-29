@@ -34,30 +34,10 @@ struct LectureListView: View {
             self.viewModel.appear()
         }
         .sheet(isPresented: $isPresented){
-            SheetView()
+            UserSettingSheet(isSheetPresented: $isPresented)
         }
     }
 }
-
-struct SheetView: View {
-    @State var ocwiCalenderUrl: String = ""
-    var body: some View {
-        NavigationView {
-            Form {
-                TextField("URL",text: $ocwiCalenderUrl)
-                Button(action: {
-                    print("Button Tapped")
-                }){
-                    Text("保存")
-                }
-                //                .foregroundColor(Color("main"))
-                .disabled(!ValidURL.verifyUrl(urlString: ocwiCalenderUrl))
-            }
-            
-        }
-    }
-}
-
 
 struct LectureList_Previews: PreviewProvider {
     static var previews: some View {

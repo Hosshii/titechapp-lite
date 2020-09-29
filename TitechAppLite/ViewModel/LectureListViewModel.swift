@@ -15,8 +15,14 @@ class LectureListViewModel: ObservableObject {
     private var cancellable: AnyCancellable!
     
     func appear(){
+        guard let url = UserSetting.getOcwiCalenderURL() else {
+            print("url not found")
+            return
+        }
+        print("url found")
         cancellable = ApiClient()
-            .fetch(URL(string:"https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!)
+//            .fetch(URL(string:"https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!)
+            .fetch(url)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
                 // TODO: エラーハンドリング
