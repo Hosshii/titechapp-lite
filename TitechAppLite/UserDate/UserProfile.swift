@@ -10,15 +10,15 @@ import Foundation
 
 class UserProfile: ObservableObject {
     /// ユーザ名
-    @Published var ocwURL: String {
+    @Published var ocwiCalenderURL: String {
         didSet {
-            UserDefaults.standard.set(ocwURL, forKey: "ocwURL")
+            UserDefaults.standard.set(ocwiCalenderURL, forKey: "ocwiCalenderURL")
         }
     }
     
     /// 初期化処理
     init() {
-        self.ocwURL = UserDefaults.standard.string(forKey: "ocwURL") ?? ""
+        self.ocwiCalenderURL = UserDefaults.standard.string(forKey: "ocwiCalenderURL") ?? ""
     }
 }
  

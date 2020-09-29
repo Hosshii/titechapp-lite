@@ -77,6 +77,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		CF28AECA2520856D0073DCD9 /* UserRepository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserRepository;
+			sourceTree = "<group>";
+		};
 		CF694F152504C17500F4CE3C /* Decoder */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +155,7 @@
 		CFF8AE1824E8F94900677260 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				CF28AECA2520856D0073DCD9 /* UserRepository */,
 				CF28AEC725207D300073DCD9 /* Util */,
 				CF28AEC425207AB90073DCD9 /* UserDate */,
 				CF694F162504C17C00F4CE3C /* Translator */,
@@ -404,6 +412,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TitechAppLite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TitechAppLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +432,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TitechAppLite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TitechAppLite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,15 +7,13 @@
 //
 
 import Foundation
-import UIKit
 
-class ValidURL {
-    static func verifyUrl (urlString: String?) -> Bool {
-        if let urlString = urlString {
-            if let url = NSURL(string: urlString) {
-                return UIApplication.shared.canOpenURL(url as URL)
-            }
+enum ValidURL {
+    static func verifyUrl (urlString: String) -> Bool {
+        if let url = URL(string: urlString), let scheme = url.scheme, scheme == "https" {
+            return true
+        } else {
+            return false
         }
-        return false
     }
 }

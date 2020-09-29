@@ -38,18 +38,18 @@ struct LectureListView: View {
 }
 
 struct SheetView: View {
-    @State var ocwURL: String = ""
+    @State var ocwiCalenderUrl: String = ""
     var body: some View {
         NavigationView {
             Form {
-                TextField("URL",text: $ocwURL)
+                TextField("URL",text: $ocwiCalenderUrl)
                 Button(action: {
                     print("Button Tapped")
                 }){
                     Text("保存")
                 }
-//                .foregroundColor(Color("main"))
-                .disabled(!ValidURL.verifyUrl(urlString: ocwURL))
+                //                .foregroundColor(Color("main"))
+                .disabled(!ValidURL.verifyUrl(urlString: ocwiCalenderUrl))
             }
             
         }
