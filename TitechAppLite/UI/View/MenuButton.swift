@@ -15,7 +15,7 @@ struct MenuButton: View {
             print("Button Tapped")
             self.isPresented.toggle()
         }){
-            Text("Menu")
+            Text("設定")
         }.foregroundColor(Color("main"))
     }
 }

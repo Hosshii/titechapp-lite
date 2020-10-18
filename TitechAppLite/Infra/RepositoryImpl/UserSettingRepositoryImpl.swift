@@ -10,12 +10,12 @@ import Foundation
 
 let ocwiCalenderURLString = "ocwiCalenderURLString"
 
-class UserSetting: UserSettingProtocol {
-    static func setOcwiCalenderURL(_ ocwiCalenderUrl: URL){
+struct UserSettingRepositoryImpl: UserSettingRepository {
+    func set(ocwiCalenderUrl: URL){
         UserDefaults.standard.set(ocwiCalenderUrl.absoluteString,forKey: ocwiCalenderURLString)
     }
     
-    static func getOcwiCalenderURL() -> URL?{
+    func getOcwiCalenderURL() -> URL?{
         guard  let url =  UserDefaults.standard.string(forKey: ocwiCalenderURLString) else {
             return nil
         }

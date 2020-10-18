@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UserSettingProtocol {
-    static func setOcwiCalenderURL(_ ocwiCalenderUrl: URL)
-    static func getOcwiCalenderURL() -> URL?
+protocol UserSettingRepository {
+    func set(ocwiCalenderUrl: URL)
+    func getOcwiCalenderURL() -> URL?
 }

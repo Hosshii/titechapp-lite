@@ -11,11 +11,16 @@ import Foundation
 import Combine
 class LectureListViewModel: ObservableObject {
     @Published var multiDayLecture: [OneDayLecture] = []
+    private let lectureListUseCase: LectureListUseCase
     
     private var cancellable: AnyCancellable!
     
+    init(lectureListUseCase: LectureListUseCase) {
+        self.lectureListUseCase = lectureListUseCase
+    }
+    
     func appear(){
-        guard let url = UserSetting.getOcwiCalenderURL() else {
+        guard let url = lectureListUseCase.getOcwCalenderURL() else {
             print("url not found")
             return
         }
