@@ -32,19 +32,6 @@
 		CFF8AE2624E8F94A00677260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF8AE2424E8F94A00677260 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CF9036DB2526C612006E8154 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		CF18D1862500C11F00A8002B /* Ics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ics.swift; sourceTree = "<group>"; };
 		CF28AEC225206F3F0073DCD9 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -60,8 +47,6 @@
 		CF6E824324EA0F20001B6301 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		CF84F8DD253C291A005C9BE6 /* UserListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUseCase.swift; sourceTree = "<group>"; };
 		CF84F8E2253C2C34005C9BE6 /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
-		CF9036C82526C611006E8154 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		CF9036CA2526C612006E8154 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CF941B2E24FB8E2A006BC550 /* Apiclient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apiclient.swift; sourceTree = "<group>"; };
 		CFB408D925234A7D00210293 /* UserSettingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingSheet.swift; sourceTree = "<group>"; };
 		CFB408DC2523516A00210293 /* UserSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingProtocol.swift; sourceTree = "<group>"; };
@@ -194,15 +179,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CF9036C72526C611006E8154 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CF9036C82526C611006E8154 /* WidgetKit.framework */,
-				CF9036CA2526C612006E8154 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CF941B2D24FB8E18006BC550 /* ApiClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				CFF8AE1824E8F94900677260 /* TitechAppLite */,
-				CF9036C72526C611006E8154 /* Frameworks */,
 				CFF8AE1724E8F94900677260 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -275,7 +250,6 @@
 				CFF8AE1224E8F94900677260 /* Sources */,
 				CFF8AE1324E8F94900677260 /* Frameworks */,
 				CFF8AE1424E8F94900677260 /* Resources */,
-				CF9036DB2526C612006E8154 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
