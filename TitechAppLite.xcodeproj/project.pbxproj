@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CF18D1872500C11F00A8002B /* Ics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF18D1862500C11F00A8002B /* Ics.swift */; };
 		CF28AEC325206F3F0073DCD9 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF28AEC225206F3F0073DCD9 /* MenuButton.swift */; };
-		CF28AEC625207AC80073DCD9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF28AEC525207AC80073DCD9 /* UserProfile.swift */; };
 		CF28AEC925207D3E0073DCD9 /* ValidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF28AEC825207D3E0073DCD9 /* ValidURL.swift */; };
 		CF55CDAD253C234C0087F755 /* UserSettingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF55CDAC253C234C0087F755 /* UserSettingUseCase.swift */; };
 		CF57438524F2585000D6CF6C /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57438424F2585000D6CF6C /* LectureHeader.swift */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		CF18D1862500C11F00A8002B /* Ics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ics.swift; sourceTree = "<group>"; };
 		CF28AEC225206F3F0073DCD9 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		CF28AEC525207AC80073DCD9 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CF28AEC825207D3E0073DCD9 /* ValidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidURL.swift; sourceTree = "<group>"; };
 		CF55CDAC253C234C0087F755 /* UserSettingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingUseCase.swift; sourceTree = "<group>"; };
 		CF57438424F2585000D6CF6C /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureHeader.swift; sourceTree = "<group>"; };
@@ -73,14 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF28AEC425207AB90073DCD9 /* UserDate */ = {
-			isa = PBXGroup;
-			children = (
-				CF28AEC525207AC80073DCD9 /* UserProfile.swift */,
-			);
-			path = UserDate;
-			sourceTree = "<group>";
-		};
 		CF28AEC725207D300073DCD9 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +82,7 @@
 		CF55CDA5253C21B30087F755 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				CF694F152504C17500F4CE3C /* Decoder */,
 				CF55CDA6253C21D10087F755 /* RepositoryImpl */,
 				CF941B2D24FB8E18006BC550 /* ApiClient */,
 			);
@@ -109,6 +100,7 @@
 		CF55CDA7253C22550087F755 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CF694F162504C17C00F4CE3C /* Translator */,
 				CF55CDAB253C23400087F755 /* UseCase */,
 				CF55CDA8253C22A40087F755 /* Repository */,
 			);
@@ -219,9 +211,6 @@
 				CF55CDA7253C22550087F755 /* Domain */,
 				CF55CDA5253C21B30087F755 /* Infra */,
 				CF28AEC725207D300073DCD9 /* Util */,
-				CF28AEC425207AB90073DCD9 /* UserDate */,
-				CF694F162504C17C00F4CE3C /* Translator */,
-				CF694F152504C17500F4CE3C /* Decoder */,
 				CFF8AE1924E8F94900677260 /* AppDelegate.swift */,
 				CFF8AE1B24E8F94900677260 /* SceneDelegate.swift */,
 				CFF8AE1F24E8F94A00677260 /* Assets.xcassets */,
@@ -330,7 +319,6 @@
 				CF6E824124EA0C92001B6301 /* LectureRow.swift in Sources */,
 				CF18D1872500C11F00A8002B /* Ics.swift in Sources */,
 				CF28AEC925207D3E0073DCD9 /* ValidURL.swift in Sources */,
-				CF28AEC625207AC80073DCD9 /* UserProfile.swift in Sources */,
 				CFB408DA25234A7D00210293 /* UserSettingSheet.swift in Sources */,
 				CF55CDAD253C234C0087F755 /* UserSettingUseCase.swift in Sources */,
 			);
