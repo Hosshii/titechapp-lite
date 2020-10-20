@@ -19,13 +19,11 @@ struct UserSettingSheet: View {
                     .autocapitalization(.none)
                     .keyboardType(.URL)
                 Button(action: {
-                    print("Button Tapped")
                     userSettingViewModel.save()
                     self.showAlert = true
                 }){
                     Text("保存")
                 }
-                //                .foregroundColor(Color("main"))
                 .disabled(!ValidURL.verifyUrl(urlString: userSettingViewModel.ocwiCalenderURL))
                 
             }
@@ -36,7 +34,6 @@ struct UserSettingSheet: View {
                     dismissButton: .default(
                         Text("ok"),
                         action: {
-                            print("way")
                             presentationMode.wrappedValue.dismiss()
                         }
                     )

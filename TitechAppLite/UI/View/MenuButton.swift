@@ -12,7 +12,6 @@ struct MenuButton: View {
     @Binding var isPresented: Bool
     var body: some View {
         Button(action: {
-            print("Button Tapped")
             self.isPresented.toggle()
         }){
             Text("設定")
