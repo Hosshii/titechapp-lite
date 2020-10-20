@@ -239,7 +239,6 @@
 				CFF8AE1224E8F94900677260 /* Sources */,
 				CFF8AE1324E8F94900677260 /* Frameworks */,
 				CFF8AE1424E8F94900677260 /* Resources */,
-				CF66CE90253E63B900F757D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -297,26 +296,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		CF66CE90253E63B900F757D9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  echo \"start format\"\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: swiftlint not found\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFF8AE1224E8F94900677260 /* Sources */ = {

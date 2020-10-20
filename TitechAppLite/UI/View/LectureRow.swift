@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LectureRow: View {
-    let lecture: Lecture
+    let lecture:Lecture
     var body: some View {
         HStack {
             Rectangle()
@@ -39,7 +39,7 @@ struct LectureRow: View {
                 .font(Font.system(size: 15))
                 .foregroundColor(Color("main"))
                 .frame(width: 44)
-                .padding(.trailing, 16)
+                .padding(.trailing,16)
         }.frame(height: 100)
     }
 }
@@ -48,13 +48,13 @@ struct LectureRow_Previews: PreviewProvider {
     static var previews: some View {
         LectureRow(
             lecture: Lecture(
-                id: "1",
+                id:"1",
                 name: "電気的aaaaaaaaaaaaaaaaaahogehoge",
                 description: "RC回 hogehogehogehoge",
                 location: ["W833", "G114"],
                 start: "8:50",
                 end: "10:30"
-
+                
             )
         )
     }

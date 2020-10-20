@@ -10,12 +10,12 @@ import Foundation
 
 struct UserSettingUseCase {
     private let useRepository: UserSettingRepository
-
-    init (repo: UserSettingRepository) {
+    
+    init (repo: UserSettingRepository){
         self.useRepository = repo
     }
-
-    func set(ocwiCalenderUrl: URL) {
+    
+    func set(ocwiCalenderUrl: URL){
         useRepository.set(ocwiCalenderUrl: ocwiCalenderUrl)
     }
     func getOcwCalenderURL() -> URL? {

@@ -9,28 +9,26 @@
 import Foundation
 
 class IcsTranslator {
-    static func roundDate(_ date: Date, calendar cal: Calendar) -> Date? {
-        return cal.date(bySettingHour: 0, minute: 0, second: 0, of: date)
+    static func roundDate(_ date: Date, calendar cal: Calendar) -> Date {
+        return cal.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
     }
-
+    
     static func ics2lecture(icsEvents: [ICSEvent]) -> [OneDayLecture] {
         let cal = Calendar.current
         var multiDayLectures: [OneDayLecture] = []
-        let sortedICSEvents = icsEvents.sorted { $0.dtstart < $1.dtstart }
+        let sortedICSEvents = icsEvents.sorted{ $0.dtstart < $1.dtstart }
         var icsEventDictionary = [Date: [Lecture]]()
-
+        
         let formatter = DateFormatter()
         formatter.locale = Locale.current
         formatter.setLocalizedDateFormatFromTemplate("MMMdEEEE")
-
+        
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .none
         timeFormatter.timeStyle = .short
-
+        
         for icsEvent in sortedICSEvents {
-            guard let roundedDate = roundDate(icsEvent.dtstart, calendar: cal) else {
-                continue
-            }
+            let roundedDate = roundDate(icsEvent.dtstart, calendar: cal)
             if var lectures = icsEventDictionary[roundedDate] {
                 lectures.append(
                     Lecture(
@@ -56,10 +54,9 @@ class IcsTranslator {
                 ]
             }
         }
-
-        guard let today = roundDate(Date(), calendar: cal) else {
-            return []
-        }
+        
+        
+        let today = roundDate(Date(), calendar: cal)
         // 今日から何日表示するか
         for i in 0..<120 {
             guard let date = Calendar.current.date(byAdding: .day, value: i, to: today) else {
@@ -75,7 +72,8 @@ class IcsTranslator {
                 )
             )
         }
-
+        
         return multiDayLectures
     }
 }
+

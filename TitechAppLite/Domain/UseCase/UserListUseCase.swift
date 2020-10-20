@@ -10,11 +10,11 @@ import Foundation
 
 struct LectureListUseCase {
     private let useRepository: UserSettingRepository
-
-    init (repo: UserSettingRepository) {
+    
+    init (repo: UserSettingRepository){
         self.useRepository = repo
     }
-
+    
     func getOcwCalenderURL() -> URL? {
         useRepository.getOcwiCalenderURL()
     }
