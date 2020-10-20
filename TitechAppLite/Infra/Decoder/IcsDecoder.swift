@@ -16,7 +16,7 @@ class IcsDecoder {
         fmt.formatOptions = opt
         return fmt
     }()
-    
+
     static let TZOFFSET = "TZOFFSETTO"
     static let BEGIN = "BEGIN:VEVENT"
     static let DTSTAMP = "DTSTAMP"
@@ -32,7 +32,7 @@ class IcsDecoder {
         var beginFlag = false
         var tzoffset = "0000"
         var result: [ICSEvent] = []
-        
+
         var tmpdtstamp: Date?
         var tmpdtend: Date?
         var tmpdtstart: Date?
@@ -40,16 +40,16 @@ class IcsDecoder {
         var tmpdescription: String?
         var tmpsummary: String?
         var tmpuid: String?
-        
-        icsString.enumerateLines{ line, stop in
+
+        icsString.enumerateLines { line, _ in
             if line.hasPrefix(TZOFFSET) {
-                let l = line.replacingOccurrences(of: TZOFFSET + ":", with: "")
-                tzoffset = l
+                let offset = line.replacingOccurrences(of: TZOFFSET + ":", with: "")
+                tzoffset = offset
             }
             if line.hasPrefix(BEGIN) {
                 beginFlag = true
             }
-            
+
             if beginFlag {
                 if line.hasPrefix(DTSTAMP) {
                     let arr = line.components(separatedBy: ":")
@@ -72,23 +72,23 @@ class IcsDecoder {
                 } else if line.hasPrefix(LOCATION) {
                     let l = line.replacingOccurrences(of: LOCATION + ":", with: "")
                     tmplocation = l
-                }else if line.hasPrefix(DESCRIPTION) {
+                } else if line.hasPrefix(DESCRIPTION) {
                     let l = line.replacingOccurrences(of: DESCRIPTION + ":", with: "")
                     tmpdescription = l
                 } else if line.hasPrefix(SUMMARY) {
                     let l = line.replacingOccurrences(of: SUMMARY + ":", with: "")
                     tmpsummary = l
-                }else if line.hasPrefix(UID) {
+                } else if line.hasPrefix(UID) {
                     let l = line.replacingOccurrences(of: UID + ":", with: "")
                     tmpuid = l
-                }else if line.hasPrefix(END) {
+                } else if line.hasPrefix(END) {
                     guard
                         let dtstamp = tmpdtstamp,
                         let dtstart = tmpdtstart,
                         let dtend = tmpdtend,
                         let uid = tmpuid
-                        else {
-                            return
+                    else {
+                        return
                     }
                     result.append(
                         ICSEvent(
@@ -102,10 +102,10 @@ class IcsDecoder {
                         )
                     )
                     beginFlag = false
-                    
+
                 }
             }
-            
+
         }
         return result
     }

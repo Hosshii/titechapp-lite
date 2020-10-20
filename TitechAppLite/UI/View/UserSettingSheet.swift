@@ -15,19 +15,19 @@ struct UserSettingSheet: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("URL",text: $userSettingViewModel.ocwiCalenderURL)
+                TextField("URL", text: $userSettingViewModel.ocwiCalenderURL)
                     .autocapitalization(.none)
                     .keyboardType(.URL)
                 Button(action: {
                     print("Button Tapped")
                     userSettingViewModel.save()
                     self.showAlert = true
-                }){
+                }) {
                     Text("保存")
                 }
                 //                .foregroundColor(Color("main"))
                 .disabled(!ValidURL.verifyUrl(urlString: userSettingViewModel.ocwiCalenderURL))
-                
+
             }
             .navigationBarTitle(Text("カレンダーURL設定"), displayMode: .inline)
             .alert(isPresented: $showAlert, content: {

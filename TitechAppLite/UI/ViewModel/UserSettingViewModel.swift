@@ -11,18 +11,18 @@ import Foundation
 class UserSettingViewModel: ObservableObject {
     @Published var ocwiCalenderURL: String = ""
     private let userSettingUseCase: UserSettingUseCase
-    
+
     init(userSettingUseCase: UserSettingUseCase) {
         self.userSettingUseCase = userSettingUseCase
     }
-    
-    func save(){
-        guard let url = URL(string: ocwiCalenderURL) else{
+
+    func save() {
+        guard let url = URL(string: ocwiCalenderURL) else {
             return
         }
         userSettingUseCase.set(ocwiCalenderUrl: url)
     }
-    
+
     func appear() {
         guard let url = userSettingUseCase.getOcwCalenderURL() else {
             return

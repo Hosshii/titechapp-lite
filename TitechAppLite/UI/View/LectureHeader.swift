@@ -11,7 +11,7 @@ import SwiftUI
 struct LectureHeader: View {
     let date: String
     var body: some View {
-        HStack{
+        HStack {
             Rectangle()
                 .fill(Color("grayMain"))
                 .frame(width: 5, height: 55, alignment: .leading)
