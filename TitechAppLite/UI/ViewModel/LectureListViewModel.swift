@@ -26,7 +26,6 @@ class LectureListViewModel: ObservableObject {
         }
         print("url found")
         cancellable = ApiClient()
-            //            .fetch(URL(string:"https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!)
             .fetch(url)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
