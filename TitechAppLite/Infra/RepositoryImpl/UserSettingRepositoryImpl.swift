@@ -19,7 +19,7 @@ struct UserSettingRepositoryImpl: UserSettingRepository {
         guard  let url =  UserDefaults.standard.string(forKey: ocwiCalenderURLString) else {
             return nil
         }
-        return URL.init(string: url)
+        return URL(string: url)
     }
 }
 
