@@ -21,6 +21,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let contentView = LectureListView()
+            .environmentObject(
+                LectureListViewModel(
+                    lectureListUseCase: LectureListUseCase(
+                        repo: UserSettingRepositoryImpl()
+                    )
+                )
+            )
+            .environmentObject(
+                UserSettingViewModel(
+                    userSettingUseCase: UserSettingUseCase(
+                        repo: UserSettingRepositoryImpl()
+                    )
+                )
+            )
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

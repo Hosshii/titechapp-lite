@@ -9,10 +9,12 @@
 import SwiftUI
 
 struct LectureListView: View {
-    @ObservedObject var viewModel = LectureListViewModel()
+    @EnvironmentObject var viewModel: LectureListViewModel
+    @State var isPresented: Bool = false
+
     var body: some View {
-        NavigationView{
-            List{
+        NavigationView {
+            List {
                 ForEach(self.viewModel.multiDayLecture) { oneDayLecture in
                     Section(header: LectureHeader(date: oneDayLecture.date)){
                         ForEach(oneDayLecture.lectures) { lecture in
@@ -22,10 +24,23 @@ struct LectureListView: View {
                 }                
             }
             .navigationBarTitle(Text("スケジュール"), displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    MenuButton(isPresented: $isPresented)
+                }
+            }
         }
-        .onAppear{
+        .onAppear {
             self.viewModel.appear()
         }
+        .sheet(
+            isPresented: $isPresented,
+            onDismiss: {
+                viewModel.appear()
+            },
+            content: {
+            UserSettingSheet()
+        })
     }
 }
 
